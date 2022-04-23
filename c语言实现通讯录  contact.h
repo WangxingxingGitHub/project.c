@@ -26,3 +26,4 @@ struct Contact
 	struct Peoinfo arr[MAX];  //通讯录好友信息数组，包含MAX个通讯录好友的信息
 	int size;  //记录通讯录当前的好友个数
 };
+
