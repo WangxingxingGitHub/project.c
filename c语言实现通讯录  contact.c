@@ -60,3 +60,5 @@ void ShowContact(const struct Contact* ps)
 		}
 	}
 }
+
+//删除好友信息函数的实现
