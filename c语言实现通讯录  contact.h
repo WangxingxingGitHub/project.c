@@ -24,3 +24,32 @@ struct Contact
 	int size;  //记录通讯录已存的好友个数
 };
 
+
+
+//创建一个枚举常量
+enum Option
+{
+	EXIT,
+	ADD,
+	DEL,
+	SEARCH,
+	MODIFIY,
+	SHOW,
+	SORT
+};
+
+
+
+//函数的声明
+void InitContact(struct Contact* ps);  //初始化通讯录函数的声明
+
+void AddContact(struct Contact* ps);  //增加好友信息函数的声明
+
+void ShowContact(const struct Contact* ps);  //显示好友信息函数的声明
+
+void DleContact(struct Contact* ps);  //删除好友信息函数的声明
+
+void SearchContact(const struct Contact* ps);  //查找好友信息函数的声明
+
+void ModifiyContact(struct Contact* ps);  //修改好友信息函数的声明
+
