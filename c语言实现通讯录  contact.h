@@ -26,6 +26,7 @@ struct Contact  //创建通讯录类型
 };
 
 
+
 //创建一个枚举常量
 enum Option
 {
@@ -37,6 +38,7 @@ enum Option
 	SHOW,
 	SORT
 };
+
 
 
 //函数的声明
