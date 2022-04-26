@@ -3,7 +3,7 @@
 
 
 //查找函数的实现
-static int Findbyname(const struct Contact* ps,char name[MAX_name])
+static int Findbyname(const struct Contact* ps,char name[MAX_name])  //static修饰，不希望函数在外部被使用
 {
 	int i = 0;
 	for(i=0;i<(ps->size);i++)
@@ -17,7 +17,7 @@ static int Findbyname(const struct Contact* ps,char name[MAX_name])
 }
 
 
-
+//接口函数的实现
 //初始化通讯录函数的实现
 void InitContact(struct Contact* ps)  //ps是指向通讯录con的指针
 {
