@@ -17,6 +17,7 @@ static int Findbyname(const struct Contact* ps,char name[MAX_name])
 }
 
 
+
 //初始化通讯录函数的实现
 void InitContact(struct Contact* ps)  //ps是指向通讯录con的指针
 {
