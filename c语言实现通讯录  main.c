@@ -21,7 +21,7 @@ int main()
 
 	struct Contact con;  //con就是通讯录，包含MAX个好友的信息和已存的好友个数
 
-    InitContact(&con);  //初始化通讯录函数
+        InitContact(&con);  //初始化通讯录函数
 
 	do
 	{
@@ -33,7 +33,7 @@ int main()
 		case ADD:
 			AddContact(&con);  //增加好友信息函数
 			break;
-
+				
 		case DEL:
 			DleContact(&con);  //删除好友信息函数
 			break;
@@ -42,7 +42,7 @@ int main()
 			SearchContact(&con);  //查找好友信息函数
 			break;
 
-        case MODIFIY:
+                case MODIFIY:
 			ModifiyContact(&con);  //修改好友信息函数
 			break;
 			
@@ -51,6 +51,7 @@ int main()
 			break;
 
 		case SORT:
+			//可使用冒泡排序或qsort函数
 			break;
 
 		case EXIT:
