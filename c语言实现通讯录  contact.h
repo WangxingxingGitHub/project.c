@@ -41,7 +41,7 @@ enum Option
 
 
 
-//函数的声明
+//接口函数的声明
 void InitContact(struct Contact* ps);  //初始化通讯录函数的声明
 
 void AddContact(struct Contact* ps);  //增加好友信息函数的声明
