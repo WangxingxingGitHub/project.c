@@ -1,9 +1,10 @@
+//                                                    main.c
 #include"seqList.h"
 
 
 void test()
 {
-	sL s1;  //定义一个顺序表，数据类型为顺序表结构体类型
+	sL s1;  //定义一个顺序表s1，数据类型为顺序表结构体类型
 
 	SeqListInit(&s1);  //初始化顺序表函数
 
@@ -11,7 +12,7 @@ void test()
 
 	SeqListPushBack(&s1,1);  //尾插顺序表函数
 	SeqListPushBack(&s1,2);
-    SeqListPushBack(&s1,3);
+        SeqListPushBack(&s1,3);
 	SeqListPushBack(&s1,4);
 	SeqListPushBack(&s1,5);
 
@@ -33,7 +34,7 @@ void test()
 
 	SeqListPrint(&s1);  //打印顺序表函数
 
-	//SeqListPrint(&s1);  //销毁顺序表函数
+	SeqListPrint(&s1);  //销毁顺序表函数
 }
 
 
