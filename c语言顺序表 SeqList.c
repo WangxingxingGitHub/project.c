@@ -56,6 +56,7 @@ void SeqListPrint(sL* ps)
 void SeqListDestory(sL* ps)
 {
 	free(ps->p);  //释放指针指向的内存空间
+	ps->p = NULL;  //指针置空
 	ps->capacity = 0;
 	ps->size = 0;
 }
@@ -84,7 +85,10 @@ void SeqListPopBack(sL* ps)
 void SeqListPushFront(sL* ps,SLDataType x)  
 {
 	int i = 0;
-	for(i=(ps->size);i>=0;i--)
+	//检查内存空间容量
+	SeqListCheckCapacity(ps);
+	//有内存空间并且没满就头插
+	for(i=(ps->size-1);i>=0;i--)
 	{
 		ps->p[i+1] = ps->p[i];
 	}
@@ -95,14 +99,15 @@ void SeqListPushFront(sL* ps,SLDataType x)
 //头删顺序表函数的实现
 void SeqListPopFront(sL* ps)  
 {
-	if(ps->size > 0)
+	if(ps->size > 0)  //确保有数据可删，防止越界访问
 	{
 		int i = 0;
-		for(i=0;i<ps->size-1;i++)
+		for(i=0;i<(ps->size)-1;i++)
 		{
 			ps->p[i] = ps->p[i+1];
 		}
 		ps->size--;
 	}
 }
+
 
