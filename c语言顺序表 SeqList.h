@@ -1,6 +1,7 @@
 //                                                    SeqList.h
 #include<stdio.h>
 #include<string.h>
+#include<assert.h>
 
 
 ////      静态顺序表
@@ -45,4 +46,9 @@ void SeqListPushFront(sL* ps,SLDataType x);  //头插顺序表函数的声明
 
 void SeqListPopFront(sL* ps);  //头删顺序表函数的声明
 
+void SeqListInsert(sL* ps,int pos,SLDataType x);  //pos下标插入函数的声明
+
+void SeqListErase(sL* ps,int pos);  //pos下标删除函数的声明
+
+int SeqListFind(sL* ps,SLDataType x);  //查找顺序表函数的声明
 
