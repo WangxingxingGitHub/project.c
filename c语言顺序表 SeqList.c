@@ -110,4 +110,53 @@ void SeqListPopFront(sL* ps)
 	}
 }
 
+//pos下标插入函数的实现
+void SeqListInsert(sL* ps,int pos,SLDataType x)
+{
+	int i = 0;
+	/*if(pos > ps->size || pos < 0)
+	{
+		printf("pos invalid\n");
+		return;
+	}*/
+	//断言的方式报错;若条件为真则不报错，为加就报错
+	assert(pos >= 0 && pos <= ps->size);
+
+	//检查内存空间容量
+	SeqListCheckCapacity(ps);
+	//有内存空间并且没满就插入
+	for(i=ps->size-1;i>=pos;i--)  //挪动元素
+	{
+		ps->p[i+1] = ps->p[i];
+	}
+	ps->p[pos] = x;
+	ps->size++;
+}
+
+//pos下标删除函数的实现
+void SeqListErase(sL* ps,int pos)
+{
+	int i = 0;
+	assert(pos >= 0 && pos < ps->size);
+	for(i=pos;i<ps->size-1;i++)
+	{
+		ps->p[i] = ps->p[i+1];
+	}
+	ps->size--;
+}
+
+//查找顺序表函数的实现
+int SeqListFind(sL* ps,SLDataType x)
+{
+	int i = 0;
+	for(i=0;i<ps->size;i++)
+	{
+		if(ps->p[i] == x)  //找到了元素，返回其下标
+		{
+			return i;
+		}
+	}
+
+	return -1;  //找不到返回-1
+}
 
