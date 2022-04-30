@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 
 //创建一个链表节点结构体类型
@@ -11,7 +12,8 @@ struct SListNode
 };
 
 
+
 //函数的声明
 void SListPrint(struct SListNode* phead);  //打印链表函数的声明
 
-void SListPushback(struct SListNode* phead,SLTDataType x);  //尾插链表函数的声
+void SListPushback(struct SListNode* phead, SLTDa
