@@ -31,6 +31,5 @@ void SListPushback(struct SListNode* phead,SLTDataType x)
 
 	//3.将原先最后一个节点的指针next指向新节点  ps->next = newnode
 
-
 }
 
