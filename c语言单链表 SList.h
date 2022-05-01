@@ -17,3 +17,4 @@ struct SListNode
 void SListPrint(struct SListNode* phead);  //打印链表函数的声明
 
 void SListPushback(struct SListNode* phead, SLTDa
+
