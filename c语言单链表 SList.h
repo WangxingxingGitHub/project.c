@@ -3,25 +3,36 @@
 #include<assert.h>
 
 
-//创建一个链表节点结构体类型
+//创建一个单链表节点结构体类型
 typedef int SLTDataType;  //SLTDataType是存储数据的数据类型
 
 struct SListNode
 {
 	SLTDataType data;  //data是存储的数据
-	struct SListNode* next;  //一个链表节点结构体类型的指针，指向下一个节点
+	struct SListNode* next;  //一个单链表节点结构体类型的指针，指向下一个节点
 };
 
 
 
 //函数的声明
-void SListPrint(struct SListNode* phead);  //打印链表函数的声明
+//打印链表函数的声明
+void SListPrint(struct SListNode* phead);  
 
-void SListPushback(struct SListNode** pphead, SLTDataType x);  //尾插链表函数的声明
+//尾插链表函数的声明
+void SListPushBack(struct SListNode** pphead, SLTDataType x); 
 
-void SListPushfront(struct SListNode** pphead, SLTDataType x);  //头插链表函数的声明
+//头插链表函数的声明
+void SListPushFront(struct SListNode** pphead, SLTDataType x);  
 
-void SListPopback(struct SListNode** pphead);  //尾删链表函数的声明
+//尾删链表函数的声明
+void SListPopBack(struct SListNode** pphead);  
 
-void SListPopfront(struct SListNode** pphead);  //头删链表函数的声明
+//头删链表函数的声明
+void SListPopFront(struct SListNode** pphead);  
+
+//查找链表函数的声明
+struct SListNode* SListFind(struct SListNode* phead, SLTDataType x);  
+
+//在pos指针位置之前去插入一个节点
+void SListInsert(struct SListNode** pphead,struct SListNode* pos, SLTDataType x);
 
