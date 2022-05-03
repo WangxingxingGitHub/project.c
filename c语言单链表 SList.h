@@ -33,6 +33,10 @@ void SListPopFront(struct SListNode** pphead);
 //查找链表函数的声明
 struct SListNode* SListFind(struct SListNode* phead, SLTDataType x);  
 
-//在pos指针位置之前去插入一个节点
+//在pos指针位置之前去插入一个节点函数的声明
 void SListInsert(struct SListNode** pphead,struct SListNode* pos, SLTDataType x);
+
+//在pos指针位置之后去插入一个节点函数的声明
+void SListInsertAfter(struct SListNode* pos, SLTDataType x);
+
 
