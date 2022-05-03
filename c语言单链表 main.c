@@ -95,7 +95,7 @@ void test4()
 		pos = SListFind(pos->next, 4);  //从pos指向的下一个节点开始查找
 	}
 	//2.修改
-	pos = SListFind(plist, 3);  //查找链表函数
+	pos = SListFind(plist, 3);  //查找链表函数,找到了返回指向data为3节点的指针
 	while(pos != NULL)
 	{
 		pos->data = 99;  //将单链表中3修改成99
@@ -113,13 +113,40 @@ void test5()
 	SListPushFront(&plist, 1);  //头插链表函数
 	SListPushFront(&plist, 2);
 	SListPushFront(&plist, 3);
-	SListPushFront(&plist, 4);
+	SListPushFront(&plist, 3);
+	SListPushFront(&plist, 4);	
+	SListPushFront(&plist, 3);
 	SListPrint(plist);  //打印链表函数
 
-	pos = SListFind(plist, 3);  //查找链表函数
-	if(pos != NULL)
+	//在pos指针位置之前去插入
+	pos = SListFind(plist, 3);  //查找链表函数,找到了返回指向data为3节点的指针
+	while(pos != NULL)
 	{
-		SListInsert(&plist,pos,888);
+		SListInsert(&plist,pos,888);  //在pos指针位置之前去插入一个节点
+		pos = SListFind(pos->next, 3);
+	}
+	SListPrint(plist);  //打印链表函数
+}
+
+void test6()
+{
+	struct SListNode* plist = NULL;  //初始化链表，将plist指针置空
+
+	struct SListNode* pos = NULL;
+	SListPushFront(&plist, 1);  //头插链表函数
+	SListPushFront(&plist, 2);
+	SListPushFront(&plist, 3);
+	SListPushFront(&plist, 3);
+	SListPushFront(&plist, 4);
+	SListPushFront(&plist, 3);
+	SListPrint(plist);  //打印链表函数
+
+	//在pos指针位置之后去插入
+	pos = SListFind(plist, 3);  //查找链表函数,找到了返回指向data为3节点的指针
+	while(pos != NULL)
+	{
+		SListInsertAfter(pos, 999);  //在pos指针位置之前去插入一个节点
+		pos = SListFind(pos->next, 3);
 	}
 	SListPrint(plist);  //打印链表函数
 }
@@ -130,7 +157,8 @@ int main()
 	//test2();
 	//test3();
 	//test4();
-	test5();
+	//test5();
+	test6();
 
 	return 0;
 }
