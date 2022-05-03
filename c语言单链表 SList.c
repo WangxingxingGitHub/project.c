@@ -35,17 +35,17 @@ void SListPrint(struct SListNode* phead)
 void SListPushBack(struct SListNode** pphead,SLTDataType x)
 {	
 	struct SListNode* ps ;
-
 	//1.创建一个新节点，需要扩容malloc
 	struct SListNode* newnode = CreateListNode(x);  //创建节点函数
 
     //2.将新节点进行尾接
-	if(*pphead == NULL)  //说明链表为空
+	  //说明链表为空
+	if(*pphead == NULL)  
 	{
 		*pphead = newnode;  //把头指针指向newnode
 	}
-
-	else  //链表不为空，要找到最后一个尾节点
+      //链表不为空，要找到最后一个尾节点
+	else
 	{ 
 		ps = *pphead;  //使指针指向链表的首个节点
 		while(ps->next != NULL)  //尾节点标志是next指针为NULL
@@ -74,7 +74,7 @@ void SListPushFront(struct SListNode** pphead, SLTDataType x)
 void SListPopBack(struct SListNode** pphead)
 {
 	struct SListNode* prev = NULL;
-	struct SListNode* ps = NULL;
+	struct SListNode* ps = *pphead;  //找尾指针
 	//1.没有节点的情况
 	//if(*pphead == NULL) //plist指针为空，说明链表为空
 	//{
@@ -92,7 +92,6 @@ void SListPopBack(struct SListNode** pphead)
 	//3.多个节点的情况
 	else
 	{
-		ps = *pphead;
 		while(ps->next != NULL)
 		{
 			prev = ps;
@@ -135,21 +134,42 @@ struct SListNode* SListFind(struct SListNode* phead, SLTDataType x)
 }
 
 
+//在pos指针位置之前去插入一个节点函数的实现
 void SListInsert(struct SListNode** pphead, struct SListNode* pos, SLTDataType x)
 {
 	struct SListNode* posPrev = *pphead; 
 	//1.创建一个新节点，需要扩容malloc
 	struct SListNode* newnode = CreateListNode(x);  //创建节点函数
 
-	//2.找到指向pos前一个节点的指针prevpos
-	while(posPrev->next != pos)
+	//2.将新节点进行插入
+	  //pos指向首节点时
+	if(pos == *pphead)
 	{
-		posPrev = posPrev->next;
+		*pphead = newnode;
+		newnode->next = pos;
 	}
-	//此时posPrev是指向pos前一个节点的指针
-
-
-	//3.将新节点进行插入
-	posPrev->next = newnode;
-	newnode->next = pos;
+	  //pos指向首节点后面的节点时
+	else
+	{
+		//找到指向pos前一个节点的指针posPrev
+		while(posPrev->next != pos)
+		{
+			posPrev = posPrev->next;
+		}
+		//此时posPrev是指向pos前一个节点的指针,将新节点进行插入
+		posPrev->next = newnode;
+		newnode->next = pos;
+	}
 }
+
+//在pos指针位置之后去插入一个节点函数的实现
+void SListInsertAfter(struct SListNode* pos, SLTDataType x)
+{
+	//1.创建一个新节点，需要扩容malloc
+	struct SListNode* newnode = CreateListNode(x);  //创建节点函数
+
+	//2.将新节点进行插入
+	newnode->next = pos->next;
+	pos->next = newnode;
+}
+
