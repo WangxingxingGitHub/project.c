@@ -151,6 +151,27 @@ void test6()
 	SListPrint(plist);  //打印链表函数
 }
 
+void test7()
+{
+	struct SListNode* plist = NULL;  //创建一个头指针,指向首节点
+
+	struct SListNode* pos = NULL;
+	SListPushBack(&plist, 1);  //单链表尾插函数
+	SListPushBack(&plist, 2);
+	SListPushBack(&plist, 3);
+	SListPushBack(&plist, 3);
+	SListPushBack(&plist, 3);
+	SListPushBack(&plist, 4);
+	SListPrint(plist);  //单链表打印函数
+
+	pos = SListFind(plist, 3);
+	while(pos != NULL)
+	{
+		SListErase(&plist, pos);  //删除pos指针指向的节点
+		pos = SListFind(plist, 3);
+	}
+	SListPrint(plist);  //单链表打印函数
+
 int main()
 {
 	//test1();
@@ -158,8 +179,8 @@ int main()
 	//test3();
 	//test4();
 	//test5();
-	test6();
-
+	//test6();
+	test7();
 	return 0;
 }
  
