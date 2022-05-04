@@ -173,3 +173,24 @@ void SListInsertAfter(struct SListNode* pos, SLTDataType x)
 	pos->next = newnode;
 }
 
+//删除pos指针指向的节点函数的实现
+void SListErase(struct SListNode** pphead, struct SListNode* pos)
+{
+	struct SListNode* prev = *pphead;
+	if(pos == *pphead)  //pos指针指向首节点时
+	{
+		*pphead = pos->next;
+		free(pos);
+	}
+
+	else  //pos指针指向首节点后的节点时
+	{
+		while(prev->next != pos)
+		{
+			prev = prev->next;
+		}
+		//此时prev指针指向pos指针前一个节点
+		prev->next = pos->next;
+		free(pos);
+	}
+}
