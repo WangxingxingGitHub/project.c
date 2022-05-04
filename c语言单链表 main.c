@@ -28,8 +28,8 @@ void test1()
 	SListPrint(plist);  //打印链表函数
 
 	SListPopFront(&plist);  //头删链表函数
-    SListPopFront(&plist);
-    SListPopFront(&plist);
+        SListPopFront(&plist);
+        SListPopFront(&plist);
 	SListPopFront(&plist);
 	SListPrint(plist);  //打印链表函数
 }
@@ -64,10 +64,10 @@ void test3()
 	SListPrint(plist);  //打印链表函数
 
 	SListPopFront(&plist);  //头删链表函数
-    SListPopFront(&plist);
-    SListPopFront(&plist);
-    SListPopFront(&plist);
-	SListPopFront(&plist);
+        SListPopFront(&plist);
+        SListPopFront(&plist);
+        SListPopFront(&plist);
+ 	SListPopFront(&plist);
 	SListPrint(plist);  //打印链表函数
 }
 
@@ -78,7 +78,7 @@ void test4()
 	int i = 1;
 
 	SListPushFront(&plist, 1);  //头插链表函数
-    SListPushFront(&plist, 2);
+        SListPushFront(&plist, 2);
 	SListPushFront(&plist, 3);
 	SListPushFront(&plist, 3);
 	SListPushFront(&plist, 3);
