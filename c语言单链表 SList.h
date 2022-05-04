@@ -39,4 +39,5 @@ void SListInsert(struct SListNode** pphead,struct SListNode* pos, SLTDataType x)
 //在pos指针位置之后去插入一个节点函数的声明
 void SListInsertAfter(struct SListNode* pos, SLTDataType x);
 
-
+//删除pos指针指向的节点函数的声明
+void SListErase(struct SListNode** pphead, struct SListNode* pos);
