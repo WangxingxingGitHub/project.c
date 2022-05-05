@@ -194,3 +194,14 @@ void SListErase(struct SListNode** pphead, struct SListNode* pos)
 		free(pos);
 	}
 }
+
+//删除pos指针指向的后一个节点函数的实现
+void SListEraseAfter(struct SListNode* pos)
+{
+	assert(pos);
+	assert(pos->next);  //pos指针后面有节点可以删
+
+	struct SListNode* next = pos->next;
+	pos->next = next->next;
+	free(next);
+}
