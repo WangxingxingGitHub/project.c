@@ -44,3 +44,6 @@ void SListErase(struct SListNode** pphead, struct SListNode* pos);
 
 //删除pos指针指向的后一个节点函数的声明
 void SListEraseAfter(struct SListNode* pos);
+
+//销毁链表函数的声明
+void SListDestory(struct SListNode** pphead);
