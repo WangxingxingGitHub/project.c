@@ -205,3 +205,19 @@ void SListEraseAfter(struct SListNode* pos)
 	pos->next = next->next;
 	free(next);
 }
+
+//销毁链表函数的实现
+void SListDestory(struct SListNode** pphead)
+{
+	assert(pphead);
+
+	struct SListNode* pos = *pphead;
+	struct SListNode* next = NULL;
+	while(pos != NULL)
+	{
+		next = pos->next;  //保存pos指针后一个节点的地址
+		free(pos);
+		pos = next;
+	}
+	*pphead = NULL;
+}
