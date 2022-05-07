@@ -48,3 +48,4 @@ void SListEraseAfter(struct SListNode* pos);
 //销毁链表函数的声明
 void SListDestory(struct SListNode** pphead);
   
+  
