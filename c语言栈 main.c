@@ -7,14 +7,20 @@ void test1()
 	StackInit(&stack);
 	StackPush(&stack, 1);
 	StackPush(&stack, 2);
+
+	printf("%d ",StackTop(&stack));
+	StackPop(&stack);
+
 	StackPush(&stack, 3);
 	StackPush(&stack, 4);
-	Stackprint(&stack);
 
-	StackPop(&stack);
-	StackPop(&stack);
-	StackPop(&stack);
-	Stackprint(&stack);
+	while(!StackEmpty(&stack))
+	{
+		printf("%d ",StackTop(&stack));
+		StackPop(&stack);
+	}
+
+	StackDestroy(&stack);
 }
 
 int main()
