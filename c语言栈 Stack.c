@@ -31,6 +31,14 @@ void StackPush(ST* ps, STDateType x)  //入栈函数
 	ps->top++;
 }
 
+STDateType StackTop(ST* ps)  //读栈顶数据
+{
+	assert(ps);
+	assert(ps->top > 0);
+
+	return ps->a[ps->top-1];
+}
+
 void StackPop(ST* ps)  //删除栈顶数据
 {
 	assert(ps);
@@ -40,14 +48,22 @@ void StackPop(ST* ps)  //删除栈顶数据
 	ps->top--;
 }
 
-void Stackprint(ST* ps)  //打印函数
+int StackEmpty(ST* ps)  //判断栈是否为空
 {
-	int i = 0;
 	assert(ps);
 
-	for(i=0;i<ps->top;i++)
-	{
-		printf("%d ",ps->a[i]);
-	}
-	printf("\n");
+	if(ps->top == 0)
+		return 1;  //栈为空返回逻辑真
+	else
+		return 0;  //栈不为返回逻辑假
+}
+
+void StackDestroy(ST* ps)  //销毁栈
+{
+	assert(ps);
+
+	free(ps->a);
+	ps->a = NULL;
+	ps->capacity = 0;
+	ps->top = 0;
 }
