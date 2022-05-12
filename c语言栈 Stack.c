@@ -48,14 +48,14 @@ void StackPop(ST* ps)  //删除栈顶数据
 	ps->top--;
 }
 
-int StackEmpty(ST* ps)  //判断栈是否为空
+bool StackEmpty(ST* ps)  //判断栈是否为空
 {
 	assert(ps);
 
 	if(ps->top == 0)
-		return 1;  //栈为空返回逻辑真
+		return true;  //栈为空返回逻辑真
 	else
-		return 0;  //栈不为返回逻辑假
+		return false;  //栈不为返回逻辑假
 }
 
 void StackDestroy(ST* ps)  //销毁栈
