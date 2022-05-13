@@ -67,3 +67,5 @@ void StackDestroy(ST* ps)  //销毁栈
 	ps->capacity = 0;
 	ps->top = 0;
 }
+
+
