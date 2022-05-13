@@ -24,3 +24,5 @@ void StackPop(ST* ps);  //删除栈顶数据
 bool StackEmpty(ST* ps);  //判断栈是否为空
 
 void StackDestroy(ST* ps);  //销毁栈
+
+
